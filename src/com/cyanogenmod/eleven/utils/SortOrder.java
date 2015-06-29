@@ -36,13 +36,13 @@ public final class SortOrder {
         /* Artist sort order Z-A */
         public final static String ARTIST_Z_A = ARTIST_A_Z + " DESC";
 
-        /* Artist sort order number of songs */
-        public final static String ARTIST_NUMBER_OF_SONGS = MediaStore.Audio.Artists.NUMBER_OF_TRACKS
-                + " DESC";
-
         /* Artist sort order number of albums */
         public final static String ARTIST_NUMBER_OF_ALBUMS = MediaStore.Audio.Artists.NUMBER_OF_ALBUMS
                 + " DESC";
+
+        /* Artist sort order number of songs */
+        public final static String ARTIST_NUMBER_OF_SONGS = MediaStore.Audio.Artists.NUMBER_OF_TRACKS
+                + " DESC, " + ARTIST_NUMBER_OF_ALBUMS;
     }
 
     /**
