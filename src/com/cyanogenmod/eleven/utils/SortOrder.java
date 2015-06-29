@@ -63,7 +63,8 @@ public final class SortOrder {
         public final static String ALBUM_ARTIST = MediaStore.Audio.Albums.ARTIST;
 
         /* Album sort order year */
-        public final static String ALBUM_YEAR = MediaStore.Audio.Albums.FIRST_YEAR + " DESC";
+        public final static String ALBUM_YEAR = MediaStore.Audio.Albums.FIRST_YEAR
+                + " DESC, " + ALBUM_A_Z;
 
     }
 
@@ -159,7 +160,7 @@ public final class SortOrder {
 
         /* Artist album sort order year */
         public final static String ALBUM_YEAR = MediaStore.Audio.Artists.Albums.FIRST_YEAR
-                + " DESC";
+                + " DESC, " + ALBUM_A_Z;
     }
 
 }
