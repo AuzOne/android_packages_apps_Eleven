@@ -146,10 +146,14 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
      */
     public static final Cursor makeAlbumCursor(final Context context, final Long artistId) {
         // requested album ordering
-        final String albumSortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
-        Uri uri = MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI;
+        final String albumSortOrder;
+        Uri uri;
         if (artistId != null) {
+            albumSortOrder = PreferenceUtils.getInstance(context).getArtistAlbumSortOrder();
             uri = MediaStore.Audio.Artists.Albums.getContentUri("external", artistId);
+        } else {
+            albumSortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
+            uri = MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI;
         }
 
         Cursor cursor = context.getContentResolver().query(uri,
