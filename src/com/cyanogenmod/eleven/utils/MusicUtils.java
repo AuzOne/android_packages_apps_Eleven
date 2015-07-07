@@ -757,7 +757,7 @@ public final class MusicUtils {
                 + AudioColumns.IS_MUSIC + "=1";
         Cursor cursor = context.getContentResolver().query(
                 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null,
-                AudioColumns.ALBUM_KEY + "," + AudioColumns.TRACK);
+                AudioColumns.YEAR + " DESC, " + AudioColumns.ALBUM_KEY + " , " + AudioColumns.TRACK);
         if (cursor != null) {
             final long[] mList = getSongListForCursor(cursor);
             cursor.close();

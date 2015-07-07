@@ -36,13 +36,13 @@ public final class SortOrder {
         /* Artist sort order Z-A */
         public final static String ARTIST_Z_A = ARTIST_A_Z + " DESC";
 
-        /* Artist sort order number of songs */
-        public final static String ARTIST_NUMBER_OF_SONGS = MediaStore.Audio.Artists.NUMBER_OF_TRACKS
-                + " DESC";
-
         /* Artist sort order number of albums */
         public final static String ARTIST_NUMBER_OF_ALBUMS = MediaStore.Audio.Artists.NUMBER_OF_ALBUMS
                 + " DESC";
+
+        /* Artist sort order number of songs */
+        public final static String ARTIST_NUMBER_OF_SONGS = MediaStore.Audio.Artists.NUMBER_OF_TRACKS
+                + " DESC, " + ARTIST_NUMBER_OF_ALBUMS;
     }
 
     /**
@@ -63,7 +63,8 @@ public final class SortOrder {
         public final static String ALBUM_ARTIST = MediaStore.Audio.Albums.ARTIST;
 
         /* Album sort order year */
-        public final static String ALBUM_YEAR = MediaStore.Audio.Albums.FIRST_YEAR + " DESC";
+        public final static String ALBUM_YEAR = MediaStore.Audio.Albums.FIRST_YEAR
+                + " DESC, " + ALBUM_A_Z;
 
     }
 
@@ -159,7 +160,7 @@ public final class SortOrder {
 
         /* Artist album sort order year */
         public final static String ALBUM_YEAR = MediaStore.Audio.Artists.Albums.FIRST_YEAR
-                + " DESC";
+                + " DESC, " + ALBUM_A_Z;
     }
 
 }
